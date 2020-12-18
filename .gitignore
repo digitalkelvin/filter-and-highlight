@@ -40,6 +40,7 @@ testem.log
 /typings
 debug.log
 .github/workflows/test.yml
+.editorconfig
 
 #cache files
 /projects/filter-and-highlight/node_modules
