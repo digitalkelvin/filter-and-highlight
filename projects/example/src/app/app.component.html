@@ -1,0 +1,18 @@
+<div id="container">
+
+  <h1>Filter And Highlight Example App</h1>
+
+  <input placeholder="Search" type="text" [(ngModel)]="filterString" class="fah-input">
+
+  <fah-filter-and-highlight [options]="myOptions">
+
+    <div class="artist-div" *ngFor="let artist of artists | filter: filterString">
+      <div class="data-div">{{artist.name}}: {{artist.age}}</div>
+      <div class="song-div" *ngFor="let song of artist.songs">
+        {{song.title}} - {{song.year}} -- {{song.album}}
+      </div>
+    </div>
+
+  </fah-filter-and-highlight>
+
+</div>

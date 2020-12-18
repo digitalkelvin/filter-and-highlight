@@ -38,6 +38,11 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+debug.log
+
+#cache files
+/projects/filter-and-highlight/node_modules
+/projects/example/node_modules
 
 # System Files
 .DS_Store

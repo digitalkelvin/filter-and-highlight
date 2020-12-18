@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "filter-and-highlight": [
+        "dist/filter-and-highlight"
+      ],
+      "filter-and-highlight/*": [
+        "dist/filter-and-highlight/*"
+      ]
+    }
   }
 }
