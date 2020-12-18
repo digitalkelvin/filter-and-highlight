@@ -39,6 +39,7 @@ yarn-error.log
 testem.log
 /typings
 debug.log
+.github/workflows/test.yml
 
 #cache files
 /projects/filter-and-highlight/node_modules
