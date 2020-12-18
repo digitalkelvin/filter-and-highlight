@@ -9,6 +9,6 @@ jobs:
     container: 'node:12-alpine'
     steps:
     - uses: actions/checkout@v1
-    -run: npm ci
-    -run: npm build --if-present
-    -run: npm test
+    - run: npm ci
+    - run: npm build --if-present
+    - run: npm test
