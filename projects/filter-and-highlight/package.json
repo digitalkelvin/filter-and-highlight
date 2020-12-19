@@ -19,8 +19,7 @@
     "highlight search",
     "angular mark filter"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
+  "release": {
     "pkgRoot": "./dist/filter-and-highlight"
-}
+  }
 }

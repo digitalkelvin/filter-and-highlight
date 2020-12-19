@@ -41,6 +41,7 @@ testem.log
 debug.log
 .github/workflows/test.yml
 .editorconfig
+.github/workflows/publish.yml
 
 #cache files
 /projects/filter-and-highlight/node_modules
