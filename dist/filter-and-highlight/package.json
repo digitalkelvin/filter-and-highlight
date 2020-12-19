@@ -19,6 +19,9 @@
     "highlight search",
     "angular mark filter"
   ],
+  "release": {
+    "pkgRoot": "./dist/filter-and-highlight"
+  },
   "main": "bundles/filter-and-highlight.umd.js",
   "module": "fesm2015/filter-and-highlight.js",
   "es2015": "fesm2015/filter-and-highlight.js",
