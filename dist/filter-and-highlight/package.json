@@ -18,5 +18,16 @@
     "ng filter and highlight",
     "highlight search",
     "angular mark filter"
-  ]
+  ],
+  "main": "bundles/filter-and-highlight.umd.js",
+  "module": "fesm2015/filter-and-highlight.js",
+  "es2015": "fesm2015/filter-and-highlight.js",
+  "esm2015": "esm2015/filter-and-highlight.js",
+  "fesm2015": "fesm2015/filter-and-highlight.js",
+  "typings": "filter-and-highlight.d.ts",
+  "metadata": "filter-and-highlight.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
 }
