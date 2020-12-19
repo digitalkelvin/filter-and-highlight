@@ -14,6 +14,9 @@
   "release": {
     "pkgRoot": "dist/filter-and-highlight"
   },
+  "angularCompilerOptions": {
+    "enableIvy": true
+  },
   "devDependencies": {
     "@angular/animations": "~11.0.4",
     "@angular/common": "~11.0.4",

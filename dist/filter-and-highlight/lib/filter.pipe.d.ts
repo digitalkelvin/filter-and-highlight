@@ -1,4 +1,5 @@
 import { PipeTransform } from '@angular/core';
+import * as i0 from "@angular/core";
 export declare class FilterPipe implements PipeTransform {
     /**
      *
@@ -14,4 +15,6 @@ export declare class FilterPipe implements PipeTransform {
      * @param isNumber whether array consists of numbers only
      */
     private checkItems;
+    static ɵfac: i0.ɵɵFactoryDef<FilterPipe, never>;
+    static ɵpipe: i0.ɵɵPipeDefWithMeta<FilterPipe, "filter">;
 }

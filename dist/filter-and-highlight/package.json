@@ -28,9 +28,11 @@
   "esm2015": "esm2015/filter-and-highlight.js",
   "fesm2015": "fesm2015/filter-and-highlight.js",
   "typings": "filter-and-highlight.d.ts",
-  "metadata": "filter-and-highlight.metadata.json",
   "sideEffects": false,
   "dependencies": {
     "tslib": "^2.0.0"
+  },
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy. This is not allowed.\\nPlease delete and rebuild the package, without compiling with Ivy, before attempting to publish.\\n')\" && exit 1"
   }
 }
