@@ -17,5 +17,5 @@ jobs:
         - uses: JS-DevTools/npm-publish@v1
           with:
             token: ${{ secrets.NPM_TOKEN }}
-            package: ./dist/filter-and-highlight/package.json
+            package: ./projects/filter-and-highlight/package.json
             access: public
