@@ -15,8 +15,6 @@ jobs:
         with:
           node-version: "12.x"
       - run: npm install
-      - run: npm run lib:build
-      - run: npm test
       - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
