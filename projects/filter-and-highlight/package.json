@@ -14,5 +14,13 @@
   "homepage": "https://github.com/digitalkelvin/filter-and-highlight#readme",
   "bugs": {
     "url": "https://github.com/digitalkelvin/filter-and-highlight/issues"
-  }
+  },
+  "keywords": [
+    "angular filter",
+    "angular search highlight",
+    "angular filter and highlight",
+    "ng filter and highlight",
+    "highlight search",
+    "angular mark filter"
+  ]
 }

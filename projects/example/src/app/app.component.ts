@@ -16,11 +16,7 @@ export class AppComponent {
       age: 25,
       songs: [
         { title: 'Dear Mama', year: 1995, album: 'Me Against the World' },
-        {
-          title: 'Brenda\'s Got a Baby ID',
-          year: 1991,
-          album: '2Pacalypse Now',
-        },
+        {title: 'Brenda\'s Got a Baby', year: 1991, album: '2Pacalypse Now'}
       ]
     },
     {
@@ -28,7 +24,7 @@ export class AppComponent {
       age: 81,
       songs: [
         { title: 'Grandma\'s Hands', year: 1971, album: 'Just as I Am' },
-        { title: 'Lean on Me', year: 1972, album: 'Still Bill' },
+        { title: 'Lean on Me', year: 1972, album: 'Still Bill'}
       ]
     }
   ];
