@@ -18,5 +18,9 @@
     "ng filter and highlight",
     "highlight search",
     "angular mark filter"
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "pkgRoot": "./dist/filter-and-highlight"
+}
 }
