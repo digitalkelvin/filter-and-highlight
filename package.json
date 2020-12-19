@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "lib:build": "ng build filter-and-highlight"
+    "lib:build": "ng build filter-and-highlight --prod"
   },
   "private": false,
   "release": {
