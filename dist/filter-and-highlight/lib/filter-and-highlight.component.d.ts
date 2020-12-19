@@ -1,5 +1,4 @@
 import { ElementRef, OnInit, Renderer2, AfterViewInit } from '@angular/core';
-import * as i0 from "@angular/core";
 export declare class FilterAndHighlightComponent implements OnInit, AfterViewInit {
     private renderer;
     content: ElementRef;
@@ -25,6 +24,4 @@ export declare class FilterAndHighlightComponent implements OnInit, AfterViewIni
      * This function will apply the styles from the options object.
      */
     private adjustStyles;
-    static ɵfac: i0.ɵɵFactoryDef<FilterAndHighlightComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDefWithMeta<FilterAndHighlightComponent, "fah-filter-and-highlight", never, { "options": "options"; }, {}, never, ["*"]>;
 }

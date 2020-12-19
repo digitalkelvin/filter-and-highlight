@@ -2,7 +2,7 @@
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core')) :
     typeof define === 'function' && define.amd ? define('filter-and-highlight', ['exports', '@angular/core'], factory) :
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['filter-and-highlight'] = {}, global.ng.core));
-}(this, (function (exports, i0) { 'use strict';
+}(this, (function (exports, core) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
@@ -305,18 +305,24 @@
         return value;
     }
 
-    var _c0 = ["content"];
-    var _c1 = ["highlightContent"];
-    var _c2 = ["*"];
     var FilterAndHighlightComponent = /** @class */ (function () {
+        /**
+         * @param {?} renderer
+         */
         function FilterAndHighlightComponent(renderer) {
             this.renderer = renderer;
         }
+        /**
+         * @return {?}
+         */
         FilterAndHighlightComponent.prototype.ngOnInit = function () {
             var e_1, _a;
             var _this = this;
+            /** @type {?} */
             var self = this;
+            /** @type {?} */
             var fahInputs = document.getElementsByClassName('fah-input');
+            /** @type {?} */
             var minLen = 1;
             if (this.options != null && 1) {
                 minLen = 1;
@@ -324,14 +330,17 @@
             try {
                 for (var fahInputs_1 = __values(fahInputs), fahInputs_1_1 = fahInputs_1.next(); !fahInputs_1_1.done; fahInputs_1_1 = fahInputs_1.next()) {
                     var input = fahInputs_1_1.value;
-                    input.onkeyup = function (e) {
+                    (( /** @type {?} */(input))).onkeyup = ( /**
+                     * @param {?} e
+                     * @return {?}
+                     */function (e) {
                         if (e.target.value.length > minLen) {
                             _this.markText(e);
                         }
                         else {
                             _this.renderNewHTML();
                         }
-                    };
+                    });
                 }
             }
             catch (e_1_1) { e_1 = { error: e_1_1 }; }
@@ -343,11 +352,16 @@
             }
             this.initialContent = this.content;
         };
+        /**
+         * @return {?}
+         */
         FilterAndHighlightComponent.prototype.ngAfterViewInit = function () {
             this.renderNewHTML();
         };
         /**
          * This function replaces innerHTML with marked HTML.
+         * @private
+         * @return {?}
          */
         FilterAndHighlightComponent.prototype.renderNewHTML = function () {
             this.renderer.setProperty(this.highlightContent.nativeElement, 'innerHTML', this.initialContent.nativeElement.innerHTML);
@@ -356,14 +370,19 @@
         /**
          * This function will replace innerHTML and apply spans to text that matches search input.
          *
-         * @param e The keyboard input
+         * @private
+         * @param {?} e The keyboard input
+         * @return {?}
          */
         FilterAndHighlightComponent.prototype.markText = function (e) {
+            /** @type {?} */
             var searchInput = document.activeElement;
             this.searchTerm = searchInput.value;
+            /** @type {?} */
             var term = this.searchTerm;
             this.highlightContent.nativeElement.innerHTML = this.initialContent.nativeElement.innerHTML;
             term = term.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1');
+            /** @type {?} */
             var re = '(?<!</?[^>]*|&[^;]*)(' + term + ')';
             try {
                 this.highlightContent.nativeElement.innerHTML = this.initialContent.nativeElement.innerHTML.replace(new RegExp(re, 'gi'), '<span class=\'fah-mark\'>$1</span>');
@@ -373,9 +392,12 @@
         };
         /**
          * This function will apply the styles from the options object.
+         * @private
+         * @return {?}
          */
         FilterAndHighlightComponent.prototype.adjustStyles = function () {
             var e_2, _a;
+            /** @type {?} */
             var elems = document.getElementsByClassName('fah-mark');
             try {
                 for (var elems_1 = __values(elems), elems_1_1 = elems_1.next(); !elems_1_1.done; elems_1_1 = elems_1.next()) {
@@ -398,65 +420,61 @@
         };
         return FilterAndHighlightComponent;
     }());
-    /** @nocollapse */ FilterAndHighlightComponent.ɵfac = function FilterAndHighlightComponent_Factory(t) { return new (t || FilterAndHighlightComponent)(i0.ɵɵdirectiveInject(i0.Renderer2)); };
-    /** @nocollapse */ FilterAndHighlightComponent.ɵcmp = i0.ɵɵdefineComponent({ type: FilterAndHighlightComponent, selectors: [["fah-filter-and-highlight"]], viewQuery: function FilterAndHighlightComponent_Query(rf, ctx) {
-            if (rf & 1) {
-                i0.ɵɵstaticViewQuery(_c0, true);
-                i0.ɵɵviewQuery(_c1, true);
-            }
-            if (rf & 2) {
-                var _t = void 0;
-                i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.content = _t.first);
-                i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.highlightContent = _t.first);
-            }
-        }, inputs: { options: "options" }, ngContentSelectors: _c2, decls: 5, vars: 2, consts: [[3, "hidden"], ["content", ""], [3, "innerHTML"], ["highlightContent", ""]], template: function FilterAndHighlightComponent_Template(rf, ctx) {
-            if (rf & 1) {
-                i0.ɵɵprojectionDef();
-                i0.ɵɵelementStart(0, "div", 0, 1);
-                i0.ɵɵprojection(2);
-                i0.ɵɵelementEnd();
-                i0.ɵɵelement(3, "div", 2, 3);
-            }
-            if (rf & 2) {
-                i0.ɵɵproperty("hidden", true);
-                i0.ɵɵadvance(3);
-                i0.ɵɵproperty("innerHTML", ctx.highlightedContent, i0.ɵɵsanitizeHtml);
-            }
-        }, styles: ["\n      .fah-mark {\n        background-color: yellow;\n        font-weight: normal;\n      }\n    "], encapsulation: 2 });
-    /*@__PURE__*/ (function () {
-        i0.ɵsetClassMetadata(FilterAndHighlightComponent, [{
-                type: i0.Component,
-                args: [{
-                        selector: 'fah-filter-and-highlight',
-                        template: "\n    <div #content [hidden]=\"true\">\n      <ng-content></ng-content>\n    </div>\n\n    <div [innerHTML]=\"highlightedContent\" #highlightContent></div>\n  ",
-                        styles: [
-                            "\n      .fah-mark {\n        background-color: yellow;\n        font-weight: normal;\n      }\n    ",
-                        ],
-                        encapsulation: i0.ViewEncapsulation.None,
-                    }]
-            }], function () { return [{ type: i0.Renderer2 }]; }, { content: [{
-                    type: i0.ViewChild,
-                    args: ['content', { static: true }]
-                }], highlightContent: [{
-                    type: i0.ViewChild,
-                    args: ['highlightContent', { static: false }]
-                }], options: [{
-                    type: i0.Input,
-                    args: ['options']
-                }] });
-    })();
+    FilterAndHighlightComponent.decorators = [
+        { type: core.Component, args: [{
+                    selector: 'fah-filter-and-highlight',
+                    template: "\n    <div #content [hidden]=\"true\">\n      <ng-content></ng-content>\n    </div>\n\n    <div [innerHTML]=\"highlightedContent\" #highlightContent></div>\n  ",
+                    encapsulation: core.ViewEncapsulation.None,
+                    styles: ["\n      .fah-mark {\n        background-color: yellow;\n        font-weight: normal;\n      }\n    "]
+                }] }
+    ];
+    /** @nocollapse */
+    FilterAndHighlightComponent.ctorParameters = function () { return [
+        { type: core.Renderer2 }
+    ]; };
+    FilterAndHighlightComponent.propDecorators = {
+        content: [{ type: core.ViewChild, args: ['content', { static: true },] }],
+        highlightContent: [{ type: core.ViewChild, args: ['highlightContent', { static: false },] }],
+        options: [{ type: core.Input, args: ['options',] }]
+    };
+    if (false) {
+        /** @type {?} */
+        FilterAndHighlightComponent.prototype.content;
+        /** @type {?} */
+        FilterAndHighlightComponent.prototype.highlightContent;
+        /** @type {?} */
+        FilterAndHighlightComponent.prototype.options;
+        /** @type {?} */
+        FilterAndHighlightComponent.prototype.initialContent;
+        /** @type {?} */
+        FilterAndHighlightComponent.prototype.highlightedContent;
+        /** @type {?} */
+        FilterAndHighlightComponent.prototype.searchTerm;
+        /**
+         * @type {?}
+         * @private
+         */
+        FilterAndHighlightComponent.prototype.renderer;
+    }
 
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: lib/filter.pipe.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var FilterPipe = /** @class */ (function () {
         function FilterPipe() {
         }
         /**
          *
-         * @param objects array of objects which will be filtered
-         * @param input term used in search
-         * @param isNumber whether object is strictly a number array
+         * @param {?} objects array of objects which will be filtered
+         * @param {?} input term used in search
+         * @param {?=} isNumber whether object is strictly a number array
+         * @return {?}
          */
         FilterPipe.prototype.transform = function (objects, input, isNumber) {
             if (isNumber === void 0) { isNumber = false; }
+            /** @type {?} */
             var inputNum;
             if (!input || !objects) {
                 return objects;
@@ -472,15 +490,23 @@
         };
         /**
          *
-         * @param objects list of items from array
-         * @param input term used to filter items
-         * @param isNumber whether array consists of numbers only
+         * @private
+         * @param {?} objects list of items from array
+         * @param {?} input term used to filter items
+         * @param {?=} isNumber whether array consists of numbers only
+         * @return {?}
          */
         FilterPipe.prototype.checkItems = function (objects, input, isNumber) {
+            /** @type {?} */
             var comp = input;
             if (!isNumber) {
                 comp = input.toLowerCase();
             }
+            /**
+             * @param {?} obj
+             * @param {?} inp
+             * @return {?}
+             */
             function checkItem(obj, inp) {
                 if (typeof obj === 'string' && obj.toString().toLowerCase().includes(comp)) {
                     return true;
@@ -512,48 +538,52 @@
                     }
                 }
             }
-            return objects.filter(function (obj) {
+            return objects.filter(( /**
+             * @param {?} obj
+             * @return {?}
+             */function (/**
+             * @param {?} obj
+             * @return {?}
+             */ obj) {
                 return checkItem(obj, input);
-            });
+            }));
         };
         return FilterPipe;
     }());
-    /** @nocollapse */ FilterPipe.ɵfac = function FilterPipe_Factory(t) { return new (t || FilterPipe)(); };
-    /** @nocollapse */ FilterPipe.ɵpipe = i0.ɵɵdefinePipe({ name: "filter", type: FilterPipe, pure: true });
-    /*@__PURE__*/ (function () {
-        i0.ɵsetClassMetadata(FilterPipe, [{
-                type: i0.Pipe,
-                args: [{
-                        name: 'filter',
-                    }]
-            }], null, null);
-    })();
+    FilterPipe.decorators = [
+        { type: core.Pipe, args: [{
+                    name: 'filter',
+                },] }
+    ];
 
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: lib/filter-and-highlight.module.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var FilterAndHighlightModule = /** @class */ (function () {
         function FilterAndHighlightModule() {
         }
         return FilterAndHighlightModule;
     }());
-    /** @nocollapse */ FilterAndHighlightModule.ɵmod = i0.ɵɵdefineNgModule({ type: FilterAndHighlightModule });
-    /** @nocollapse */ FilterAndHighlightModule.ɵinj = i0.ɵɵdefineInjector({ factory: function FilterAndHighlightModule_Factory(t) { return new (t || FilterAndHighlightModule)(); }, imports: [[]] });
-    (function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(FilterAndHighlightModule, { declarations: [FilterAndHighlightComponent, FilterPipe], exports: [FilterAndHighlightComponent, FilterPipe] }); })();
-    /*@__PURE__*/ (function () {
-        i0.ɵsetClassMetadata(FilterAndHighlightModule, [{
-                type: i0.NgModule,
-                args: [{
-                        declarations: [FilterAndHighlightComponent, FilterPipe],
-                        imports: [],
-                        exports: [FilterAndHighlightComponent, FilterPipe],
-                    }]
-            }], null, null);
-    })();
+    FilterAndHighlightModule.decorators = [
+        { type: core.NgModule, args: [{
+                    declarations: [FilterAndHighlightComponent, FilterPipe],
+                    imports: [],
+                    exports: [FilterAndHighlightComponent, FilterPipe],
+                },] }
+    ];
 
-    /*
-     * Public API Surface of filter-and-highlight
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: public-api.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
     /**
-     * Generated bundle index. Do not edit.
+     * @fileoverview added by tsickle
+     * Generated from: filter-and-highlight.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
 
     exports.FilterAndHighlightComponent = FilterAndHighlightComponent;

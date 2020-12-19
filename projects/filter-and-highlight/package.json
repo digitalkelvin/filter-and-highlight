@@ -20,6 +20,10 @@
     "angular mark filter"
   ],
   "release": {
-    "pkgRoot": "./dist/filter-and-highlight"
+    "pkgRoot": "./dist/filter-and-highlight",
+    "assets": [
+      "dist/filter-and-release/*.zip",
+      "dist/filter-and-release/*.tar.gz"
+    ]
   }
 }
